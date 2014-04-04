@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "jjkConstants.h"
+#include "jjkKeychainWrapper.h"
 
 @interface jjkViewController : UIViewController
 

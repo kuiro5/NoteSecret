@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aek-n4-8cU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Aek-n4-8cU">
                                 <rect key="frame" x="0.0" y="65" width="320" height="503"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -61,7 +61,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="NNp-bp-X0x" kind="push" id="sAY-wP-meo"/>
+                                    <segue destination="NNp-bp-X0x" kind="modal" id="crg-Dn-z39"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -70,7 +70,9 @@
                             <outlet property="delegate" destination="5vy-Hb-Ran" id="LFv-kJ-6gB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="YiU-2w-GOv"/>
+                    <navigationItem key="navigationItem" id="YiU-2w-GOv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FTQ-Wz-8y7"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQI-gx-ZZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -155,6 +157,7 @@
             <point key="canvasLocation" x="-395" y="384"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.53725492949999998" green="0.76862752440000004" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
