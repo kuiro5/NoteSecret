@@ -7,6 +7,7 @@
 //
 
 #import "jjkViewController.h"
+#import "jjkTableViewController.h"
 
 @interface jjkViewController ()
 
@@ -24,6 +25,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    jjkTableViewController *tableViewController = segue.destinationViewController;
+    //noteTableViewController.delegate = self;
+
 }
 
 @end

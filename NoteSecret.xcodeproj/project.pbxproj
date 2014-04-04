@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B26B04518EEE5D300ED71F9 /* jjkNotepadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B26B04418EEE5D300ED71F9 /* jjkNotepadViewController.m */; };
+		7B26B04818EEEDF700ED71F9 /* jjkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B26B04718EEEDF700ED71F9 /* jjkTableViewController.m */; };
 		7B9D534018EDFF120079EC0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D533F18EDFF120079EC0D /* Foundation.framework */; };
 		7B9D534218EDFF120079EC0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D534118EDFF120079EC0D /* CoreGraphics.framework */; };
 		7B9D534418EDFF120079EC0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D534318EDFF120079EC0D /* UIKit.framework */; };
@@ -34,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B26B04318EEE5D300ED71F9 /* jjkNotepadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jjkNotepadViewController.h; sourceTree = "<group>"; };
+		7B26B04418EEE5D300ED71F9 /* jjkNotepadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jjkNotepadViewController.m; sourceTree = "<group>"; };
+		7B26B04618EEEDF700ED71F9 /* jjkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = jjkTableViewController.h; path = ../jjkTableViewController.h; sourceTree = "<group>"; };
+		7B26B04718EEEDF700ED71F9 /* jjkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = jjkTableViewController.m; path = ../jjkTableViewController.m; sourceTree = "<group>"; };
 		7B9D533C18EDFF120079EC0D /* NoteSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9D533F18EDFF120079EC0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B9D534118EDFF120079EC0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +85,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B26B04918EEEFF000ED71F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7B26B04A18EEEFF600ED71F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B9D535118EDFF120079EC0D /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7B26B04B18EEF00100ED71F9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B26B04618EEEDF700ED71F9 /* jjkTableViewController.h */,
+				7B26B04718EEEDF700ED71F9 /* jjkTableViewController.m */,
+				7B26B04318EEE5D300ED71F9 /* jjkNotepadViewController.h */,
+				7B26B04418EEE5D300ED71F9 /* jjkNotepadViewController.m */,
+				7B9D535418EDFF120079EC0D /* jjkViewController.h */,
+				7B9D535518EDFF120079EC0D /* jjkViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		7B9D533318EDFF120079EC0D = {
 			isa = PBXGroup;
 			children = (
@@ -112,12 +146,9 @@
 		7B9D534518EDFF120079EC0D /* NoteSecret */ = {
 			isa = PBXGroup;
 			children = (
-				7B9D534E18EDFF120079EC0D /* jjkAppDelegate.h */,
-				7B9D534F18EDFF120079EC0D /* jjkAppDelegate.m */,
-				7B9D535118EDFF120079EC0D /* Main.storyboard */,
-				7B9D535418EDFF120079EC0D /* jjkViewController.h */,
-				7B9D535518EDFF120079EC0D /* jjkViewController.m */,
-				7B9D535718EDFF120079EC0D /* Images.xcassets */,
+				7B26B04B18EEF00100ED71F9 /* Controllers */,
+				7B26B04A18EEEFF600ED71F9 /* Views */,
+				7B26B04918EEEFF000ED71F9 /* Model */,
 				7B9D534618EDFF120079EC0D /* Supporting Files */,
 			);
 			path = NoteSecret;
@@ -126,6 +157,9 @@
 		7B9D534618EDFF120079EC0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B9D535718EDFF120079EC0D /* Images.xcassets */,
+				7B9D534E18EDFF120079EC0D /* jjkAppDelegate.h */,
+				7B9D534F18EDFF120079EC0D /* jjkAppDelegate.m */,
 				7B9D534718EDFF120079EC0D /* NoteSecret-Info.plist */,
 				7B9D534818EDFF120079EC0D /* InfoPlist.strings */,
 				7B9D534B18EDFF120079EC0D /* main.m */,
@@ -252,7 +286,9 @@
 			files = (
 				7B9D535618EDFF120079EC0D /* jjkViewController.m in Sources */,
 				7B9D535018EDFF120079EC0D /* jjkAppDelegate.m in Sources */,
+				7B26B04818EEEDF700ED71F9 /* jjkTableViewController.m in Sources */,
 				7B9D534C18EDFF120079EC0D /* main.m in Sources */,
+				7B26B04518EEE5D300ED71F9 /* jjkNotepadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +493,7 @@
 				7B9D537018EDFF120079EC0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B9D537118EDFF120079EC0D /* Build configuration list for PBXNativeTarget "NoteSecretTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +502,7 @@
 				7B9D537318EDFF120079EC0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
