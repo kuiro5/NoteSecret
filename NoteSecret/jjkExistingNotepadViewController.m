@@ -9,6 +9,10 @@
 #import "jjkExistingNotepadViewController.h"
 
 @interface jjkExistingNotepadViewController ()
+@property (weak, nonatomic) IBOutlet UITextView *existingContent;
+@property (weak, nonatomic) IBOutlet UITextView *existingTitle;
+- (IBAction)existingSave:(id)sender;
+- (IBAction)existingCancel:(id)sender;
 
 @end
 
@@ -41,8 +45,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //self.existingContentTextView.text = self.contentToPass;
-    //self.existingTitleTextView.text = self.titleToPass;
+    //self.existingContent.text = self.contentToPass;
+    self.existingTitle.text = self.titleToPass;
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,4 +67,11 @@
 */
 
 
+- (IBAction)existingSave:(id)sender {
+    self.completionBlock(nil);
+}
+
+- (IBAction)existingCancel:(id)sender {
+    self.completionBlock(nil);
+}
 @end

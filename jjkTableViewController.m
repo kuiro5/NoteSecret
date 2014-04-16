@@ -174,9 +174,9 @@ NSInteger rowSelected;
     {
         jjkExistingNotepadViewController *existingNotepadViewController = segue.destinationViewController;
         
-        //NSDictionary *dictionaryToPass = [self.model.noteSecretArray objectAtIndex:rowSelected];
+        NSDictionary *dictionaryToPass = [self.model.noteSecretArray objectAtIndex:rowSelected];
         //existingNotepadViewController.contentToPass = [dictionaryToPass objectForKey:@"NoteContent"];
-        //existingNotepadViewController.titleToPass = [dictionaryToPass objectForKey:@"NoteLabel"];
+        existingNotepadViewController.titleToPass = [dictionaryToPass objectForKey:@"NoteLabel"];
         
         existingNotepadViewController.completionBlock = ^(id obj) {
             [self dismissViewControllerAnimated:YES completion:NULL];
