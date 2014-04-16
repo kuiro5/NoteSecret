@@ -64,6 +64,24 @@
             </objects>
             <point key="canvasLocation" x="144" y="-543"/>
         </scene>
+        <!--Jjk Existing Notepad View Controller-->
+        <scene sceneID="3Xd-W0-09Q">
+            <objects>
+                <viewController id="R7D-3h-OGv" customClass="jjkExistingNotepadViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZXN-9j-Lhl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uqt-Kn-APT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WaL-X5-yla">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gS-y1-x98" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="-513"/>
+        </scene>
         <!--Jjk Table View Controller-->
         <scene sceneID="4YQ-6P-gnF">
             <objects>
@@ -90,7 +108,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="NNp-bp-X0x" kind="modal" identifier="OldNoteSegue" id="crg-Dn-z39"/>
+                                    <segue destination="R7D-3h-OGv" kind="modal" identifier="OldNoteSegue" id="N7O-3K-W9z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,7 +214,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ziv-xq-52C"/>
-    </inferredMetricsTieBreakers>
 </document>

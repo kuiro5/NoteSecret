@@ -26,6 +26,7 @@
 		7B9D536918EDFF120079EC0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D536718EDFF120079EC0D /* InfoPlist.strings */; };
 		7B9D536B18EDFF120079EC0D /* NoteSecretTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D536A18EDFF120079EC0D /* NoteSecretTests.m */; };
 		7BCE330818FF081500D3E05B /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE330718FF081500D3E05B /* Model.m */; };
+		7BCE330B18FF1A1E00D3E05B /* jjkExistingNotepadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE330A18FF1A1E00D3E05B /* jjkExistingNotepadViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		7B9D536A18EDFF120079EC0D /* NoteSecretTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteSecretTests.m; sourceTree = "<group>"; };
 		7BCE330618FF081500D3E05B /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		7BCE330718FF081500D3E05B /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		7BCE330918FF1A1E00D3E05B /* jjkExistingNotepadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jjkExistingNotepadViewController.h; sourceTree = "<group>"; };
+		7BCE330A18FF1A1E00D3E05B /* jjkExistingNotepadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jjkExistingNotepadViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				7B26B04418EEE5D300ED71F9 /* jjkNotepadViewController.m */,
 				7B9D535418EDFF120079EC0D /* jjkViewController.h */,
 				7B9D535518EDFF120079EC0D /* jjkViewController.m */,
+				7BCE330918FF1A1E00D3E05B /* jjkExistingNotepadViewController.h */,
+				7BCE330A18FF1A1E00D3E05B /* jjkExistingNotepadViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				7B9D535018EDFF120079EC0D /* jjkAppDelegate.m in Sources */,
 				7B26B04818EEEDF700ED71F9 /* jjkTableViewController.m in Sources */,
 				7BCE330818FF081500D3E05B /* Model.m in Sources */,
+				7BCE330B18FF1A1E00D3E05B /* jjkExistingNotepadViewController.m in Sources */,
 				7B9D534C18EDFF120079EC0D /* main.m in Sources */,
 				7B26B04518EEE5D300ED71F9 /* jjkNotepadViewController.m in Sources */,
 			);

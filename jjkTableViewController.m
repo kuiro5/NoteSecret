@@ -8,10 +8,13 @@
 
 #import "jjkTableViewController.h"
 #import "jjkNotepadViewController.h"
+#import "jjkExistingNotepadViewController.h"
 
 @interface jjkTableViewController ()
 
 @end
+
+NSInteger rowSelected;
 
 @implementation jjkTableViewController
 
@@ -55,6 +58,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    rowSelected = indexPath.row;
 }
 
 #pragma mark - Table view data source
@@ -164,8 +172,13 @@
     }
     else if ([segue.identifier isEqualToString:@"OldNoteSegue"])
     {
-        jjkNotepadViewController *notepadViewController = segue.destinationViewController;
-        notepadViewController.completionBlock = ^(id obj) {
+        jjkExistingNotepadViewController *existingNotepadViewController = segue.destinationViewController;
+        
+        //NSDictionary *dictionaryToPass = [self.model.noteSecretArray objectAtIndex:rowSelected];
+        //existingNotepadViewController.contentToPass = [dictionaryToPass objectForKey:@"NoteContent"];
+        //existingNotepadViewController.titleToPass = [dictionaryToPass objectForKey:@"NoteLabel"];
+        
+        existingNotepadViewController.completionBlock = ^(id obj) {
             [self dismissViewControllerAnimated:YES completion:NULL];
             if (obj) {
                 //NSDictionary *dictionary = obj;
