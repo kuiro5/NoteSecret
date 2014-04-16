@@ -10,4 +10,9 @@
 
 @interface Model : NSObject
 
+//@property(strong, nonatomic) NSMutableDictionary *noteSecretDictioanry;
+@property(strong, nonatomic)NSMutableArray *noteSecretArray;
++(id)sharedInstance;
+-(void)addNewNote:(NSString*)label noteContent:(NSString*)note;
+
 @end

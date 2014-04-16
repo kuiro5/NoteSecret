@@ -18,6 +18,16 @@
 
 @implementation jjkNotepadViewController
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        _model = [Model sharedInstance];
+    }
+    return self;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -51,12 +61,18 @@
 */
 
 - (IBAction)saveButtonPressed:(id)sender {
-    NSString *string = @"";
-    self.completionBlock(string);
+    UITextView *newTitle = self.noteTitle;
+    UITextView *newContent = self.noteContent;
+    
+    NSString *titleString = newTitle.text;
+    NSString *contentString = newContent.text;
+    
+    [self.model addNewNote:titleString noteContent:contentString];
+    self.completionBlock(nil);
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    NSString *string = @"";
-    self.completionBlock(string);
+    //NSString *string = @"";
+    self.completionBlock(nil);
 }
 @end

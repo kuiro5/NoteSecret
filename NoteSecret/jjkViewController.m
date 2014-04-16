@@ -162,7 +162,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     jjkTableViewController *tableViewController = segue.destinationViewController;
-    //noteTableViewController.delegate = self;
 
 }
 

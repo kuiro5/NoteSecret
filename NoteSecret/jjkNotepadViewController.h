@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @interface jjkNotepadViewController : UIViewController
 @property (nonatomic,copy) CompletionBlock completionBlock;
+@property (strong,nonatomic) Model *model;
 @end

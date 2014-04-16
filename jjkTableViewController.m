@@ -15,6 +15,16 @@
 
 @implementation jjkTableViewController
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        _model = [Model sharedInstance];
+    }
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -33,6 +43,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
 }
 
 
@@ -54,7 +69,7 @@
 {
 
     // Return the number of rows in the section.
-    return 1;
+    return [self.model.noteSecretArray count];
 }
 
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
@@ -62,12 +77,16 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    NSLog(@"***Getting Called");
+    
+    
     if(cell == nil)
     {
-        
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         
     }
+    
+     cell.textLabel.text = [[self.model.noteSecretArray objectAtIndex:indexPath.row] objectForKey:@"NoteLabel"];
     
     //cell.textLabel.text = [self.model nameAtIndex:indexPath.row];
     //cell.detailTextLabel.text = [self.model addressAtIndex:indexPath.row];
