@@ -9,6 +9,10 @@
 #import "jjkNotepadViewController.h"
 
 @interface jjkNotepadViewController ()
+- (IBAction)saveButtonPressed:(id)sender;
+- (IBAction)cancelButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *noteTitle;
+@property (weak, nonatomic) IBOutlet UITextView *noteContent;
 
 @end
 
@@ -46,4 +50,13 @@
 }
 */
 
+- (IBAction)saveButtonPressed:(id)sender {
+    NSString *string = @"";
+    self.completionBlock(string);
+}
+
+- (IBAction)cancelButtonPressed:(id)sender {
+    NSString *string = @"";
+    self.completionBlock(string);
+}
 @end

@@ -25,6 +25,7 @@
 		7B9D536118EDFF120079EC0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D534318EDFF120079EC0D /* UIKit.framework */; };
 		7B9D536918EDFF120079EC0D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B9D536718EDFF120079EC0D /* InfoPlist.strings */; };
 		7B9D536B18EDFF120079EC0D /* NoteSecretTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9D536A18EDFF120079EC0D /* NoteSecretTests.m */; };
+		7BCE330818FF081500D3E05B /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BCE330718FF081500D3E05B /* Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		7B9D536618EDFF120079EC0D /* NoteSecretTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NoteSecretTests-Info.plist"; sourceTree = "<group>"; };
 		7B9D536818EDFF120079EC0D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7B9D536A18EDFF120079EC0D /* NoteSecretTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoteSecretTests.m; sourceTree = "<group>"; };
+		7BCE330618FF081500D3E05B /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		7BCE330718FF081500D3E05B /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 		7B26B04918EEEFF000ED71F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7BCE330618FF081500D3E05B /* Model.h */,
+				7BCE330718FF081500D3E05B /* Model.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				7B26B05318EF261000ED71F9 /* jjkKeychainWrapper.m in Sources */,
 				7B9D535018EDFF120079EC0D /* jjkAppDelegate.m in Sources */,
 				7B26B04818EEEDF700ED71F9 /* jjkTableViewController.m in Sources */,
+				7BCE330818FF081500D3E05B /* Model.m in Sources */,
 				7B9D534C18EDFF120079EC0D /* main.m in Sources */,
 				7B26B04518EEE5D300ED71F9 /* jjkNotepadViewController.m in Sources */,
 			);

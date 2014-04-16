@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="Aek-n4-8cU">
-                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                                <rect key="frame" x="0.0" y="97" width="320" height="471"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -30,15 +30,35 @@
                                 <rect key="frame" x="0.0" y="21" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="save" id="7k1-i4-bYg"/>
+                                    <barButtonItem systemItem="save" id="7k1-i4-bYg">
+                                        <connections>
+                                            <action selector="saveButtonPressed:" destination="NNp-bp-X0x" id="HUK-b9-Yoe"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="95K-gJ-xEn"/>
-                                    <barButtonItem systemItem="cancel" id="pIw-u5-0tD"/>
+                                    <barButtonItem systemItem="cancel" id="pIw-u5-0tD">
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="NNp-bp-X0x" id="itR-Wv-uhR"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="LmC-dy-K0L">
+                                <rect key="frame" x="0.0" y="58" width="320" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.53725492949999998" green="0.76862752440000004" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="kmC-cv-TVI"/>
+                    <connections>
+                        <outlet property="noteContent" destination="Aek-n4-8cU" id="mpY-Ix-NCd"/>
+                        <outlet property="noteTitle" destination="LmC-dy-K0L" id="FxX-xi-iJ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8a4-Me-FLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -61,7 +81,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="NNp-bp-X0x" kind="modal" id="crg-Dn-z39"/>
+                                    <segue destination="NNp-bp-X0x" kind="modal" identifier="OldNoteSegue" id="crg-Dn-z39"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,12 +91,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="YiU-2w-GOv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FTQ-Wz-8y7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FTQ-Wz-8y7">
+                            <connections>
+                                <segue destination="NNp-bp-X0x" kind="modal" identifier="AddNoteSegue" id="Ziv-xq-52C"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQI-gx-ZZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="447"/>
+            <point key="canvasLocation" x="433" y="211"/>
         </scene>
         <!--Jjk View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -139,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="421"/>
+            <point key="canvasLocation" x="-30" y="211"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kj7-D6-hfb">
@@ -154,7 +178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3b-MS-gjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-395" y="384"/>
+            <point key="canvasLocation" x="-553" y="332"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.53725492949999998" green="0.76862752440000004" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
@@ -163,4 +187,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ziv-xq-52C"/>
+    </inferredMetricsTieBreakers>
 </document>

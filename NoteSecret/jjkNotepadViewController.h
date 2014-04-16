@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface jjkNotepadViewController : UIViewController
-
+@property (nonatomic,copy) CompletionBlock completionBlock;
 @end

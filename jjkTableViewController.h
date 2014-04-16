@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface jjkTableViewController : UITableViewController
-
+//@property (nonatomic,copy) CompletionBlock completionBlock;
 @end
