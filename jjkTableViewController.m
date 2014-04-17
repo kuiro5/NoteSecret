@@ -12,9 +12,9 @@
 
 @interface jjkTableViewController ()
 
+@property(strong,nonatomic) NSIndexPath *pathToPass;
 @end
 
-NSInteger rowSelected;
 
 @implementation jjkTableViewController
 
@@ -33,6 +33,7 @@ NSInteger rowSelected;
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+            self.pathToPass = nil;
     }
     return self;
 }
@@ -50,6 +51,7 @@ NSInteger rowSelected;
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.pathToPass = nil;
     [self.tableView reloadData];
 }
 
@@ -62,7 +64,9 @@ NSInteger rowSelected;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    rowSelected = indexPath.row;
+    self.pathToPass = indexPath;
+    
+    NSLog(@"SELECTED THIS: %d", self.pathToPass.row);
 }
 
 #pragma mark - Table view data source
@@ -174,9 +178,14 @@ NSInteger rowSelected;
     {
         jjkExistingNotepadViewController *existingNotepadViewController = segue.destinationViewController;
         
-        NSDictionary *dictionaryToPass = [self.model.noteSecretArray objectAtIndex:rowSelected];
+        //NSDictionary *dictionaryToPass = [self.model.noteSecretArray objectAtIndex:rowSelected];
         //existingNotepadViewController.contentToPass = [dictionaryToPass objectForKey:@"NoteContent"];
-        existingNotepadViewController.titleToPass = [dictionaryToPass objectForKey:@"NoteLabel"];
+        //existingNotepadViewController.titleToPass = [dictionaryToPass objectForKey:@"NoteLabel"];
+        
+        
+        existingNotepadViewController.pathToLoad = [self.tableView indexPathForSelectedRow];
+        
+        NSLog(@"SEGUE %d", existingNotepadViewController.pathToLoad.row);
         
         existingNotepadViewController.completionBlock = ^(id obj) {
             [self dismissViewControllerAnimated:YES completion:NULL];

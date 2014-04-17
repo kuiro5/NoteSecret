@@ -10,9 +10,11 @@
 #import "Model.h"
 
 @interface jjkExistingNotepadViewController : UIViewController
-@property(strong, nonatomic)NSString *contentToPass;
-@property(strong, nonatomic)NSString *titleToPass;
+//@property(strong, nonatomic)NSString *contentToPass;
+//@property(strong, nonatomic)NSString *titleToPass;
 @property (nonatomic,copy) CompletionBlock completionBlock;
 @property (strong,nonatomic) Model *model;
+@property(strong,nonatomic)NSIndexPath *pathToLoad;
 
 @end
+

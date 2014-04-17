@@ -41,12 +41,27 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSInteger temp = self.pathToLoad.row;
+    NSDictionary *dictionaryToPass = [self.model.noteSecretArray objectAtIndex:temp];
+    
+    NSLog(@"VIEWDIDLOAD: %d", temp);
+    
+    self.existingContent.text = [dictionaryToPass objectForKey:@"NoteContent"];
+    self.existingTitle.text = [dictionaryToPass objectForKey:@"NoteLabel"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     //self.existingContent.text = self.contentToPass;
-    self.existingTitle.text = self.titleToPass;
+    //self.existingTitle.text = self.titleToPass;
+    
+    NSInteger temp = self.pathToLoad.row;
+    
+    NSLog(@"VIEWILLAPPEAR: %d", temp);
+    NSDictionary *dictionaryToPass = [self.model.noteSecretArray objectAtIndex:temp];
+    
+    self.existingContent.text = [dictionaryToPass objectForKey:@"NoteContent"];
+    self.existingTitle.text = [dictionaryToPass objectForKey:@"NoteLabel"];
 }
 
 - (void)didReceiveMemoryWarning
