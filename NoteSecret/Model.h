@@ -14,5 +14,6 @@
 @property(strong, nonatomic)NSMutableArray *noteSecretArray;
 +(id)sharedInstance;
 -(void)addNewNote:(NSString*)label noteContent:(NSString*)note;
+-(void)updateNote:(NSString*)label noteContent:(NSString*)note index:(NSIndexPath*)indexPath;
 
 @end

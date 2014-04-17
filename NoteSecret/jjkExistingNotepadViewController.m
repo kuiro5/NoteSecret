@@ -83,6 +83,8 @@
 
 
 - (IBAction)existingSave:(id)sender {
+    
+    [self.model updateNote:self.existingTitle.text noteContent:self.existingContent.text index:self.pathToLoad];
     self.completionBlock(nil);
 }
 

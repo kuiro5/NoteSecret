@@ -38,4 +38,12 @@
     [self.noteSecretArray addObject:newNoteDictionary];
     
 }
+
+-(void)updateNote:(NSString*)label noteContent:(NSString*)note index:(NSIndexPath*)indexPath
+{
+    NSDictionary *updateNoteDictionary = [[NSDictionary alloc] initWithObjectsAndKeys:label, @"NoteLabel", note, @"NoteContent", nil];
+    
+    [self.noteSecretArray replaceObjectAtIndex:indexPath.row withObject:updateNoteDictionary];
+    
+}
 @end
