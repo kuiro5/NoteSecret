@@ -15,5 +15,8 @@
 +(id)sharedInstance;
 -(void)addNewNote:(NSString*)label noteContent:(NSString*)note;
 -(void)updateNote:(NSString*)label noteContent:(NSString*)note index:(NSIndexPath*)indexPath;
+- (void)saveNoteList;
+- (NSMutableArray *)dataFromJSONFile:(NSString *)jsonFileName;
+- (id)initWithJSONFromFile:(NSString *)jsonFileName;
 
 @end
