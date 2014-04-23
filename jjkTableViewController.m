@@ -9,6 +9,7 @@
 #import "jjkTableViewController.h"
 #import "jjkNotepadViewController.h"
 #import "jjkExistingNotepadViewController.h"
+#import "jjkViewController.h"
 
 @interface jjkTableViewController ()
 
@@ -38,6 +39,25 @@
     }
     return self;
 }
+
+
+- (void)applicationDidBecomeActive
+{
+    //Perform unwind segue
+    [self performSegueWithIdentifier:@"unwind" sender:self];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidBecomeActiveNotification
+                                                  object:nil];
+    
+    // Do other viewWillDisappear stuff...
+    
+    [super viewWillDisappear:animated];
+}
+
+
 
 - (void)viewDidLoad
 {
@@ -90,8 +110,16 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     self.pathToPass = nil;
     [self.tableView reloadData];
+    
+    // Do other viewWillAppear stuff...
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
 

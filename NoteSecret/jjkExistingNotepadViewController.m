@@ -7,6 +7,7 @@
 //
 
 #import "jjkExistingNotepadViewController.h"
+#import "jjkViewController.h"
 
 @interface jjkExistingNotepadViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *existingContent;
@@ -54,6 +55,7 @@
 {
     //self.existingContent.text = self.contentToPass;
     //self.existingTitle.text = self.titleToPass;
+    [super viewWillAppear:animated];
     
     NSInteger temp = self.pathToLoad.row;
     
@@ -62,7 +64,30 @@
     
     self.existingContent.text = [dictionaryToPass objectForKey:@"NoteContent"];
     self.existingTitle.text = [dictionaryToPass objectForKey:@"NoteLabel"];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
 }
+
+
+- (void)applicationDidBecomeActive
+{
+    //Perform unwind segue
+    [self performSegueWithIdentifier:@"unwind" sender:self];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidBecomeActiveNotification
+                                                  object:nil];
+    
+    // Do other viewWillDisappear stuff...
+    
+    [super viewWillDisappear:animated];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

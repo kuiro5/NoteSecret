@@ -7,6 +7,7 @@
 //
 
 #import "jjkNotepadViewController.h"
+#import "jjkViewController.h"
 
 @interface jjkNotepadViewController ()
 - (IBAction)saveButtonPressed:(id)sender;
@@ -48,6 +49,36 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    // Do other viewWillAppear stuff...
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidBecomeActive)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+- (void)applicationDidBecomeActive
+{
+    //Perform unwind segue
+    [self performSegueWithIdentifier:@"unwind" sender:self];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIApplicationDidBecomeActiveNotification
+                                                  object:nil];
+    
+    // Do other viewWillDisappear stuff...
+    
+    [super viewWillDisappear:animated];
+}
+
 
 /*
 #pragma mark - Navigation

@@ -58,9 +58,11 @@
                     <connections>
                         <outlet property="noteContent" destination="Aek-n4-8cU" id="mpY-Ix-NCd"/>
                         <outlet property="noteTitle" destination="LmC-dy-K0L" id="FxX-xi-iJ0"/>
+                        <segue destination="4oA-EJ-k7G" kind="unwind" identifier="unwind" unwindAction="unwindToLogin:" id="vmp-8f-Rse"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8a4-Me-FLh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4oA-EJ-k7G" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="144" y="-543"/>
         </scene>
@@ -117,9 +119,11 @@
                     <connections>
                         <outlet property="existingContent" destination="2vE-2J-VkN" id="pHm-f9-FHf"/>
                         <outlet property="existingTitle" destination="cXQ-GJ-rYs" id="yyE-4R-RfX"/>
+                        <segue destination="uQ3-5C-PFZ" kind="unwind" identifier="unwind" unwindAction="unwindToLogin:" id="uUm-lu-NnI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gS-y1-x98" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uQ3-5C-PFZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="497" y="-517"/>
         </scene>
@@ -165,8 +169,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="UIh-Hs-Iw4" kind="unwind" identifier="unwind" unwindAction="unwindToLogin:" id="d3k-ax-sDP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQI-gx-ZZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="UIh-Hs-Iw4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="433" y="211"/>
         </scene>
@@ -197,23 +205,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBg-qf-r8T">
-                                <rect key="frame" x="78" y="379" width="165" height="33"/>
+                                <rect key="frame" x="78" y="408" width="165" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change Password">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4X-0P-ptE">
-                                <rect key="frame" x="78" y="420" width="165" height="33"/>
+                                <rect key="frame" x="78" y="449" width="165" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change Username">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vF-9o-KJR">
-                                <rect key="frame" x="78" y="461" width="165" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Crypto Info">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -231,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30" y="211"/>
+            <point key="canvasLocation" x="-470" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Kj7-D6-hfb">
@@ -246,7 +247,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3b-MS-gjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553" y="332"/>
+            <point key="canvasLocation" x="-881" y="211"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.53725492949999998" green="0.76862752440000004" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>

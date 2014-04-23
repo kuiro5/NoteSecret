@@ -11,5 +11,5 @@
 #include "jjkKeychainWrapper.h"
 
 @interface jjkViewController : UIViewController
-
+- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue;
 @end

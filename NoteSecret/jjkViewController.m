@@ -23,10 +23,27 @@
     self.pinValidated = NO;
 }
 
+// Helper method to congregate the Name and PIN fields for validation.
+- (BOOL)credentialsValidated
+{
+    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
+    BOOL pin = [[NSUserDefaults standardUserDefaults] boolForKey:PIN_SAVED];
+    if (name && pin) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [self presentAlertViewForPassword];
+}
+
+- (IBAction)unwindToLogin:(UIStoryboardSegue *)segue
+{
+    // Do something after unwinding
 }
 
 - (void)presentAlertViewForPassword
@@ -72,18 +89,6 @@
         passwordField.delegate = self;
         passwordField.tag = kTextFieldPassword;
         [alert show];
-    }
-}
-
-// Helper method to congregate the Name and PIN fields for validation.
-- (BOOL)credentialsValidated
-{
-    NSString *name = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
-    BOOL pin = [[NSUserDefaults standardUserDefaults] boolForKey:PIN_SAVED];
-    if (name && pin) {
-        return YES;
-    } else {
-        return NO;
     }
 }
 
