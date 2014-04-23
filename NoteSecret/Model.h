@@ -17,6 +17,6 @@
 -(void)updateNote:(NSString*)label noteContent:(NSString*)note index:(NSIndexPath*)indexPath;
 - (void)saveNoteList;
 - (NSMutableArray *)dataFromJSONFile:(NSString *)jsonFileName;
-- (id)initWithJSONFromFile:(NSString *)jsonFileName;
+//- (id)initWithJSONFromFile:(NSString *)jsonFileName;
 
 @end

@@ -13,6 +13,7 @@
 @interface jjkTableViewController ()
 
 @property(strong,nonatomic) NSIndexPath *pathToPass;
+@property(strong, nonatomic) NSMutableArray *totalNoteArray;
 @end
 
 
@@ -49,8 +50,42 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceWillLock) name:UIApplicationProtectedDataWillBecomeUnavailable object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceWillUnLock) name:UIApplicationProtectedDataDidBecomeAvailable object:nil];
+}
 
+// We still must manually remove ourselves from observing.
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
+#pragma mark - Data Protection Testing Methods
+
+// This method will get called when the device is locked, but checkKey will not. It is queued until the file becomes available again.
+// I've seen very sporadic results with iOS 5 as to whether this method executes.
+- (void)deviceWillLock
+{
+    NSLog(@"** Device is will become locked");
+    [self performSelector:@selector(checkFile) withObject:nil afterDelay:10];
+}
+
+- (void)deviceWillUnLock
+{
+    NSLog(@"** Device is unlocked");
+    [self performSelector:@selector(checkFile) withObject:nil afterDelay:10];
+}
+
+- (void)checkFile
+{
+    NSLog(@"** Validate Data Protection: checkFile");
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *jsonPath = [documentsDirectory stringByAppendingPathComponent:@"christmasItems.json"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:jsonPath]) {
+        NSData *responseData = [NSData dataWithContentsOfFile:jsonPath];
+        NSDictionary* json = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
+        NSLog(@"** FILE %@", json);
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated

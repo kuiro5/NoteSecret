@@ -27,19 +27,20 @@
         // initialization
         //self.noteSecretDictioanry = [[NSMutableDictionary alloc] init];
         //self.noteSecretArray = [[NSMutableArray alloc] init];
+        self.noteSecretArray = [self dataFromJSONFile:@"notes.json"];
     }
     return self;
 }
 
-- (id)initWithJSONFromFile:(NSString *)jsonFileName
-{
-    self = [super init];
-    if (self) {
-        self.noteSecretArray = [self dataFromJSONFile:jsonFileName];
-        //[self writeDefaultImageToDocuments];
-    }
-    return self;
-}
+//- (id)initWithJSONFromFile:(NSString *)jsonFileName
+//{
+//    self = [super init];
+//    if (self) {
+//        self.noteSecretArray = [self dataFromJSONFile:jsonFileName];
+//        //[self writeDefaultImageToDocuments];
+//    }
+//    return self;
+//}
 
 // Helper method to get the data from the JSON file.
 - (NSMutableArray *)dataFromJSONFile:(NSString *)jsonFileName
