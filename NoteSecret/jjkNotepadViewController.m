@@ -60,18 +60,20 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(applicationDidBecomeActive)
-                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
+                                                 name:UIApplicationDidEnterBackgroundNotification object:nil];
 }
 
 - (void)applicationDidBecomeActive
 {
     //Perform unwind segue
     [self performSegueWithIdentifier:@"unwind" sender:self];
+    //jjkViewController *viewController = [[jjkViewController alloc] init];
+    //[self presentViewController:viewController animated:YES completion:nil];
 }
 - (void)viewWillDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationDidBecomeActiveNotification
+                                                    name:UIApplicationDidEnterBackgroundNotification
                                                   object:nil];
     
     // Do other viewWillDisappear stuff...

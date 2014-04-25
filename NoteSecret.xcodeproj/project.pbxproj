@@ -11,6 +11,7 @@
 		7B26B04818EEEDF700ED71F9 /* jjkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B26B04718EEEDF700ED71F9 /* jjkTableViewController.m */; };
 		7B26B04D18EF1CBF00ED71F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B26B04C18EF1CBF00ED71F9 /* Security.framework */; };
 		7B26B05318EF261000ED71F9 /* jjkKeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B26B05218EF261000ED71F9 /* jjkKeychainWrapper.m */; };
+		7B2E6EB6190A970F00C05D33 /* notesecretlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2E6EB5190A970F00C05D33 /* notesecretlogo.png */; };
 		7B9D534018EDFF120079EC0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D533F18EDFF120079EC0D /* Foundation.framework */; };
 		7B9D534218EDFF120079EC0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D534118EDFF120079EC0D /* CoreGraphics.framework */; };
 		7B9D534418EDFF120079EC0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D534318EDFF120079EC0D /* UIKit.framework */; };
@@ -48,6 +49,7 @@
 		7B26B04E18EF22FB00ED71F9 /* jjkConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jjkConstants.h; sourceTree = "<group>"; };
 		7B26B05118EF261000ED71F9 /* jjkKeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jjkKeychainWrapper.h; sourceTree = "<group>"; };
 		7B26B05218EF261000ED71F9 /* jjkKeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jjkKeychainWrapper.m; sourceTree = "<group>"; };
+		7B2E6EB5190A970F00C05D33 /* notesecretlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notesecretlogo.png; sourceTree = "<group>"; };
 		7B9D533C18EDFF120079EC0D /* NoteSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9D533F18EDFF120079EC0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B9D534118EDFF120079EC0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -175,6 +177,7 @@
 		7B9D534618EDFF120079EC0D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7B2E6EB5190A970F00C05D33 /* notesecretlogo.png */,
 				7B9D535718EDFF120079EC0D /* Images.xcassets */,
 				7B9D534E18EDFF120079EC0D /* jjkAppDelegate.h */,
 				7B9D534F18EDFF120079EC0D /* jjkAppDelegate.m */,
@@ -286,6 +289,7 @@
 			files = (
 				7B9D535818EDFF120079EC0D /* Images.xcassets in Resources */,
 				7B9D534A18EDFF120079EC0D /* InfoPlist.strings in Resources */,
+				7B2E6EB6190A970F00C05D33 /* notesecretlogo.png in Resources */,
 				7B9D535318EDFF120079EC0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
