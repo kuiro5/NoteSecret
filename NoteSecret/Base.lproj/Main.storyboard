@@ -223,12 +223,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="qMD-Hv-1su"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i5z-ju-5qX">
                                 <rect key="frame" x="43" y="324" width="234" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Yro-K7-LfM"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkr-9f-GzO">
                                 <rect key="frame" x="68" y="369" width="64" height="30"/>
@@ -236,6 +242,9 @@
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Agg-gw-xxL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6K-Uz-w7Y">
                                 <rect key="frame" x="201" y="369" width="46" height="30"/>
@@ -243,6 +252,9 @@
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EqH-WU-Bqb"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notesecretlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Jq-Jh-xPM">
                                 <rect key="frame" x="109" y="75" width="83" height="90"/>
@@ -255,10 +267,14 @@
                     <navigationItem key="navigationItem" id="Mxf-8B-M6P">
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="jDI-jr-bYh">
                             <connections>
-                                <segue destination="5vy-Hb-Ran" kind="push" id="wjB-OM-gks"/>
+                                <segue destination="5vy-Hb-Ran" kind="push" identifier="ValidatedSegue" id="O0E-oA-B5B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="passwordTextField" destination="i5z-ju-5qX" id="fcN-wa-h9B"/>
+                        <outlet property="usernameTextField" destination="Xxx-GA-QLu" id="sDB-yj-WEx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

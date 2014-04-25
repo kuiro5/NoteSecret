@@ -10,6 +10,10 @@
 #import "jjkTableViewController.h"
 
 @interface jjkViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+- (IBAction)submitPressed:(id)sender;
+- (IBAction)clearPressed:(id)sender;
 @property (nonatomic) BOOL pinValidated;
 @end
 
@@ -35,6 +39,13 @@
     }
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -53,25 +64,26 @@
     BOOL hasPin = [[NSUserDefaults standardUserDefaults] boolForKey:PIN_SAVED];
     
     // 2
-    if (hasPin) {
-        // 3
-        NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
-        NSString *message = [NSString stringWithFormat:@"What is %@'s password?", user];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter Password"
-                                                        message:message
-                                                       delegate:self
-                                              cancelButtonTitle:@"Cancel"
-                                              otherButtonTitles:@"Done", nil];
-        // 4
-        [alert setAlertViewStyle:UIAlertViewStyleSecureTextInput]; // Gives us the password field
-        alert.tag = kAlertTypePIN;
-        // 5
-        UITextField *pinField = [alert textFieldAtIndex:0];
-        pinField.delegate = self;
-        pinField.autocapitalizationType = UITextAutocapitalizationTypeWords;
-        pinField.tag = kTextFieldPIN;
-        [alert show];
-    } else {
+//    if (hasPin) {
+//        // 3
+//        NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
+//        NSString *message = [NSString stringWithFormat:@"What is %@'s password?", user];
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Enter Password"
+//                                                        message:message
+//                                                       delegate:self
+//                                              cancelButtonTitle:@"Cancel"
+//                                              otherButtonTitles:@"Done", nil];
+//        // 4
+//        [alert setAlertViewStyle:UIAlertViewStyleSecureTextInput]; // Gives us the password field
+//        alert.tag = kAlertTypePIN;
+//        // 5
+//        UITextField *pinField = [alert textFieldAtIndex:0];
+//        pinField.delegate = self;
+//        pinField.autocapitalizationType = UITextAutocapitalizationTypeWords;
+//        pinField.tag = kTextFieldPIN;
+//        [alert show];
+//    }
+        if(!hasPin) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Setup Credentials"
                                                         message:@"Password must be at least 8 characters."
                                                        delegate:self
@@ -97,21 +109,21 @@
 {
     // 1
     switch (textField.tag) {
-        case kTextFieldPIN: // We go here if this is the 2nd+ time used (we've already set a PIN at Setup).
-            NSLog(@"User entered PIN to validate");
-            if ([textField.text length] > 0) {
-                // 2
-                NSUInteger fieldHash = [textField.text hash]; // Get the hash of the entered PIN, minimize contact with the real password
-                // 3
-                if ([jjkKeychainWrapper compareKeychainValueForMatchingPIN:fieldHash]) { // Compare them
-                    NSLog(@"** User Authenticated!!");
-                    self.pinValidated = YES;
-                } else {
-                    NSLog(@"** Wrong Password :(");
-                    self.pinValidated = NO;
-                }
-            }
-            break;
+//        case kTextFieldPIN: // We go here if this is the 2nd+ time used (we've already set a PIN at Setup).
+//            NSLog(@"User entered PIN to validate");
+//            if ([textField.text length] > 0) {
+//                // 2
+//                NSUInteger fieldHash = [textField.text hash]; // Get the hash of the entered PIN, minimize contact with the real password
+//                // 3
+//                if ([jjkKeychainWrapper compareKeychainValueForMatchingPIN:fieldHash]) { // Compare them
+//                    NSLog(@"** User Authenticated!!");
+//                    self.pinValidated = YES;
+//                } else {
+//                    NSLog(@"** Wrong Password :(");
+//                    self.pinValidated = NO;
+//                }
+//            }
+//            break;
         case kTextFieldName: // 1st part of the Setup flow.
             NSLog(@"User entered name");
             if ([textField.text length] > 0) {
@@ -164,10 +176,65 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if(self.pinValidated)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     jjkTableViewController *tableViewController = segue.destinationViewController;
 
 }
 
+- (IBAction)submitPressed:(id)sender {
+    BOOL validated = NO;
+    
+    if ([self.passwordTextField.text length] > 0) {
+        // 2
+        NSUInteger fieldHash = [self.passwordTextField.text hash]; // Get the hash of the entered PIN, minimize contact with the real password
+        // 3
+        if ([jjkKeychainWrapper compareKeychainValueForMatchingPIN:fieldHash]) { // Compare them
+            NSLog(@"** User Authenticated!!");
+            self.pinValidated = YES;
+        } else {
+            NSLog(@"** Wrong Password :(");
+            self.pinValidated = NO;
+        }
+    }
+    else
+    {
+        self.pinValidated = NO;
+    }
+    if([self.usernameTextField.text length] > 0)
+    {
+        NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
+        if([self.usernameTextField.text isEqualToString:(user)])
+        {
+            self.pinValidated = YES;
+        }
+    }
+    else
+    {
+        self.pinValidated = NO;
+    }
+    
+    if(self.pinValidated)
+    {
+        [self performSegueWithIdentifier:@"ValidatedSegue" sender:self];
+    }
+
+}
+
+- (IBAction)clearPressed:(id)sender {
+    self.usernameTextField.text = @"";
+    self.passwordTextField.text = @"";
+}
 @end
