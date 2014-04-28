@@ -52,7 +52,22 @@
 */
 
 - (IBAction)saveButtonPressed:(id)sender {
-    self.completionBlock(nil);
+    if([self.usernameNowTextField.text isEqualToString:[[NSUserDefaults standardUserDefaults] stringForKey:USERNAME]]  && [self.usernameToChangeToTextField.text isEqualToString:self.confirmUsernameToChangeTextField.text])
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:self.usernameToChangeToTextField.text forKey:USERNAME];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        self.completionBlock(nil);
+    }
+    else
+    {
+        UIAlertView *newAlert = [[UIAlertView alloc] initWithTitle:@"Incorrect Username"
+                                                        message:@"Please Try Again"
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+        [newAlert show];
+    }
+    
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {

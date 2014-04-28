@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#include "jjkConstants.h"
-#include "jjkKeychainWrapper.h"
-#include "jjkChangeUsernameViewController.h"
-#include "jjkChangePasswordViewController.h"
+#import "jjkConstants.h"
+#import "jjkKeychainWrapper.h"
+#import "jjkChangeUsernameViewController.h"
+#import "jjkChangePasswordViewController.h"
 
 @interface jjkViewController : UIViewController
 - (IBAction)unwindToLogin:(UIStoryboardSegue *)segue;

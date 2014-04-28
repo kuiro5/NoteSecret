@@ -52,7 +52,25 @@
 */
 
 - (IBAction)saveButtonPressed:(id)sender {
-    self.completionBlock(nil);
+    NSUInteger fieldHash = [self.passwordNowTextField.text hash]; // Get the hash of the entered PIN, minimize contact with the real password
+
+    if([jjkKeychainWrapper compareKeychainValueForMatchingPIN:fieldHash]  && [self.passwordToChangeToTextField.text isEqualToString:self.confirmPasswordToChangeTextField.text])
+    {
+        NSString *fieldString = [jjkKeychainWrapper securedSHA256DigestHashForPIN:fieldHash];
+        [jjkKeychainWrapper createKeychainValue:fieldString forIdentifier:PIN_SAVED];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        self.completionBlock(nil);
+    }
+    else
+    {
+        UIAlertView *newAlert = [[UIAlertView alloc] initWithTitle:@"Incorrect Password"
+                                                           message:@"Please Try Again"
+                                                          delegate:self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil, nil];
+        [newAlert show];
+    }
+
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {

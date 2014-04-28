@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "jjkViewController.h"
 
 @interface jjkChangePasswordViewController : UIViewController
 @property (nonatomic,copy) CompletionBlock completionBlock;
