@@ -218,40 +218,27 @@
 }
 
 - (IBAction)submitPressed:(id)sender {
-    BOOL validated = NO;
     
-    if ([self.passwordTextField.text length] > 0) {
+    if ([self.passwordTextField.text length] > 0 && [self.usernameTextField.text length] > 0) {
         // 2
         NSUInteger fieldHash = [self.passwordTextField.text hash]; // Get the hash of the entered PIN, minimize contact with the real password
+         NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
         // 3
-        if ([jjkKeychainWrapper compareKeychainValueForMatchingPIN:fieldHash]) { // Compare them
+        if ([jjkKeychainWrapper compareKeychainValueForMatchingPIN:fieldHash] && [self.usernameTextField.text isEqualToString:(user)]) { // Compare them
             NSLog(@"** User Authenticated!!");
             self.pinValidated = YES;
+            [self performSegueWithIdentifier:@"ValidatedSegue" sender:self];
         } else {
             NSLog(@"** Wrong Password :(");
             self.pinValidated = NO;
+            
+            UIAlertView *newAlert = [[UIAlertView alloc] initWithTitle:@"Incorrect Username/Password"
+                                                               message:@"Please Try Again"
+                                                              delegate:self
+                                                     cancelButtonTitle:@"OK"
+                                                     otherButtonTitles:nil, nil];
+            [newAlert show];
         }
-    }
-    else
-    {
-        self.pinValidated = NO;
-    }
-    if([self.usernameTextField.text length] > 0)
-    {
-        NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:USERNAME];
-        if([self.usernameTextField.text isEqualToString:(user)])
-        {
-            self.pinValidated = YES;
-        }
-    }
-    else
-    {
-        self.pinValidated = NO;
-    }
-    
-    if(self.pinValidated)
-    {
-        [self performSegueWithIdentifier:@"ValidatedSegue" sender:self];
     }
 
 }

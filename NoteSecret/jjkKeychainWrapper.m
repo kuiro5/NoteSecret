@@ -114,8 +114,10 @@
 {
     
     if ([[self keychainStringFromMatchingIdentifier:PIN_SAVED] isEqualToString:[self securedSHA256DigestHashForPIN:pinHash]]) {
+        NSLog(@"MATCH");
         return YES;
     } else {
+        NSLog(@"DONT MATCH");
         return NO;
     }
 }

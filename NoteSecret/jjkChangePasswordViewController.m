@@ -56,8 +56,9 @@
 
     if([jjkKeychainWrapper compareKeychainValueForMatchingPIN:fieldHash]  && [self.passwordToChangeToTextField.text isEqualToString:self.confirmPasswordToChangeTextField.text])
     {
-        NSString *fieldString = [jjkKeychainWrapper securedSHA256DigestHashForPIN:fieldHash];
-        [jjkKeychainWrapper createKeychainValue:fieldString forIdentifier:PIN_SAVED];
+         NSUInteger newFieldHash = [self.passwordToChangeToTextField.text hash]; // Get the hash of the entered PIN, minimize contact with the real password
+        NSString *newFieldString = [jjkKeychainWrapper securedSHA256DigestHashForPIN:newFieldHash];
+        [jjkKeychainWrapper updateKeychainValue:newFieldString forIdentifier:PIN_SAVED];
         [[NSUserDefaults standardUserDefaults] synchronize];
         self.completionBlock(nil);
     }
