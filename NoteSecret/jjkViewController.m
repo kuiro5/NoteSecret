@@ -178,7 +178,7 @@
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
-    if(self.pinValidated)
+    if(self.pinValidated || ![identifier isEqualToString:@"ValidatedSegue"])
     {
         return YES;
     }
@@ -190,7 +190,30 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    jjkTableViewController *tableViewController = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"PasswordSegue"])
+    {
+        jjkChangePasswordViewController *passwordViewController = segue.destinationViewController;
+        passwordViewController.completionBlock = ^(id obj) {
+            [self dismissViewControllerAnimated:YES completion:NULL];
+            if (obj) {
+                //NSDictionary *dictionary = obj;
+                //[self.myDataManager addBuilding:dictionary];
+            }
+        };
+    }
+    else if ([segue.identifier isEqualToString:@"UsernameSegue"])
+    {
+        jjkChangeUsernameViewController *usernameViewController = segue.destinationViewController;
+        usernameViewController.completionBlock = ^(id obj) {
+            [self dismissViewControllerAnimated:YES completion:NULL];
+            if (obj) {
+                //NSDictionary *dictionary = obj;
+                //[self.myDataManager addBuilding:dictionary];
+            }
+        };
+    }
+
+
 
 }
 

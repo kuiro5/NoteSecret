@@ -12,6 +12,8 @@
 		7B26B04D18EF1CBF00ED71F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B26B04C18EF1CBF00ED71F9 /* Security.framework */; };
 		7B26B05318EF261000ED71F9 /* jjkKeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B26B05218EF261000ED71F9 /* jjkKeychainWrapper.m */; };
 		7B2E6EB6190A970F00C05D33 /* notesecretlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2E6EB5190A970F00C05D33 /* notesecretlogo.png */; };
+		7B538DB3190DD30A009CD761 /* jjkChangeUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B538DB2190DD30A009CD761 /* jjkChangeUsernameViewController.m */; };
+		7B538DB6190DD369009CD761 /* jjkChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B538DB5190DD369009CD761 /* jjkChangePasswordViewController.m */; };
 		7B9D534018EDFF120079EC0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D533F18EDFF120079EC0D /* Foundation.framework */; };
 		7B9D534218EDFF120079EC0D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D534118EDFF120079EC0D /* CoreGraphics.framework */; };
 		7B9D534418EDFF120079EC0D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9D534318EDFF120079EC0D /* UIKit.framework */; };
@@ -50,6 +52,10 @@
 		7B26B05118EF261000ED71F9 /* jjkKeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jjkKeychainWrapper.h; sourceTree = "<group>"; };
 		7B26B05218EF261000ED71F9 /* jjkKeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jjkKeychainWrapper.m; sourceTree = "<group>"; };
 		7B2E6EB5190A970F00C05D33 /* notesecretlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notesecretlogo.png; sourceTree = "<group>"; };
+		7B538DB1190DD30A009CD761 /* jjkChangeUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jjkChangeUsernameViewController.h; sourceTree = "<group>"; };
+		7B538DB2190DD30A009CD761 /* jjkChangeUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jjkChangeUsernameViewController.m; sourceTree = "<group>"; };
+		7B538DB4190DD369009CD761 /* jjkChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jjkChangePasswordViewController.h; sourceTree = "<group>"; };
+		7B538DB5190DD369009CD761 /* jjkChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jjkChangePasswordViewController.m; sourceTree = "<group>"; };
 		7B9D533C18EDFF120079EC0D /* NoteSecret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteSecret.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9D533F18EDFF120079EC0D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B9D534118EDFF120079EC0D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -128,6 +134,10 @@
 				7B9D535518EDFF120079EC0D /* jjkViewController.m */,
 				7BCE330918FF1A1E00D3E05B /* jjkExistingNotepadViewController.h */,
 				7BCE330A18FF1A1E00D3E05B /* jjkExistingNotepadViewController.m */,
+				7B538DB1190DD30A009CD761 /* jjkChangeUsernameViewController.h */,
+				7B538DB2190DD30A009CD761 /* jjkChangeUsernameViewController.m */,
+				7B538DB4190DD369009CD761 /* jjkChangePasswordViewController.h */,
+				7B538DB5190DD369009CD761 /* jjkChangePasswordViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -311,12 +321,14 @@
 			files = (
 				7B9D535618EDFF120079EC0D /* jjkViewController.m in Sources */,
 				7B26B05318EF261000ED71F9 /* jjkKeychainWrapper.m in Sources */,
+				7B538DB3190DD30A009CD761 /* jjkChangeUsernameViewController.m in Sources */,
 				7B9D535018EDFF120079EC0D /* jjkAppDelegate.m in Sources */,
 				7B26B04818EEEDF700ED71F9 /* jjkTableViewController.m in Sources */,
 				7BCE330818FF081500D3E05B /* Model.m in Sources */,
 				7BCE330B18FF1A1E00D3E05B /* jjkExistingNotepadViewController.m in Sources */,
 				7B9D534C18EDFF120079EC0D /* main.m in Sources */,
 				7B26B04518EEE5D300ED71F9 /* jjkNotepadViewController.m in Sources */,
+				7B538DB6190DD369009CD761 /* jjkChangePasswordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
